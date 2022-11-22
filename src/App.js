@@ -4,6 +4,7 @@ import Weather from "./Weather";
 import Tip from "./Tip";
 import "./App.css";
 import Forecast from "./Forecast";
+import Footer from "./Footer";
 
 export default function App() {
   return (
@@ -20,7 +21,8 @@ export default function App() {
           <Forecast />
           </div>
           </div>
-        </div>
+        </div>          
+        <Footer />
         </div>
       </div>
   );
