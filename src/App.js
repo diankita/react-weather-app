@@ -17,7 +17,7 @@ export default function App() {
           <Tip />
           </div>
           <div className="col-md-7" id="weather-forecast-section">
-            <Forecast />
+          <Forecast />
           </div>
           </div>
         </div>
