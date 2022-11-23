@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
@@ -17,10 +18,7 @@ export default function Weather() {
       <div className="row city">
         <div className="col city">
           <h1>
-            <span role="img" aria-label="emoji">
-              📍
-            </span>
-            <span>{weatherData.city}</span>
+            {weatherData.city}
           </h1>
         </div>
       </div>

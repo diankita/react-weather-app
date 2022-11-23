@@ -3,12 +3,15 @@ import React from "react";
 export default function Search() {
   return (
     <div className="Search">
-      <form className="row">
+      <form>
+        <div className="row">
         <div className="col-md-8 mb-2">
           <input
             type="search"
             placeholder="Enter a city"
             className="form-control"
+            autoFocus
+            autoComplete="on"
           />
         </div>
         <div className="col mb-2">
@@ -30,6 +33,7 @@ export default function Search() {
             </span>
           </button>
         </div>
+      </div>
       </form>
     </div>
   );
