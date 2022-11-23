@@ -8,7 +8,7 @@ export default function Footer() {
       <a
         href="https://github.com/diankita/react-weather-app"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         open sourced on Github
       </a>
@@ -18,7 +18,7 @@ export default function Footer() {
         href="https://www.flaticon.com/free-icons/weather"
         title="weather icons"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         iconixar - Flaticon
       </a>

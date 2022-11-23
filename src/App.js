@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./Search";
 import Weather from "./Weather";
 import Tip from "./Tip";
