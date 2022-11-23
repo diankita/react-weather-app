@@ -4,6 +4,7 @@ import WeatherIcon from "./images/01d.png";
 
 export default function Forecast() {
   return (
+    <div className="Forecast">
     <div className="row" id="weather-forecast-section">
       <div className="col-4 forecast-information">
         <div className="forecast-day">Monday</div>
@@ -66,5 +67,6 @@ export default function Forecast() {
         <div className="forecast-description">Cloudy</div>
       </div>
     </div>
+  </div>
   );
 }

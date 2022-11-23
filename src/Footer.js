@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer>
+    <div className="Footer">
       Coded by Diankita and{" "}
       <a
         href="https://github.com/diankita/react-weather-app"
@@ -22,6 +22,6 @@ export default function Footer() {
       >
         iconixar - Flaticon
       </a>
-    </footer>
+  </div>
   );
 }
