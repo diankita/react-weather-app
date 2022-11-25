@@ -14,7 +14,7 @@ export default function App() {
           <Search />
           <div className="row" id="main-section">
             <div className="col" id="current-weather-section">
-              <Weather />
+              <Weather defaultCity="Berlin" />
               <Tip />
             </div>
             <div className="col-md-7" id="weather-forecast-section">
