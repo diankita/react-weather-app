@@ -81,7 +81,7 @@ if (weatherData.ready) {
     `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getWeatherData);
 
-  return "Loading"
+  return "Loading..."
 }
 
 }
