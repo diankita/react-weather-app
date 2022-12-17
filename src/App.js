@@ -1,7 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Search from "./Search";
 import Weather from "./Weather";
 import Tip from "./Tip";
 import Forecast from "./Forecast";
@@ -11,7 +10,6 @@ export default function App() {
   return (
     <div className="App">
       <div className="container shadow">
-          <Search />
           <div className="row" id="main-section">
             <div className="col" id="current-weather-section">
               <Weather defaultCity="Berlin" />
