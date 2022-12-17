@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+import CurrentWeather from "./CurrentWeather";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false})
@@ -35,44 +35,8 @@ if (weatherData.ready) {
 
       <div className="row">
         <div className="col">
-          <ul>
-            <li>
-              <FormattedDate date={weatherData.date} />
-            </li>
-            <li>{weatherData.description}</li>
-          </ul>
-          <div className="row">
-            <div className="col">
-              <span className="degrees">{Math.round(weatherData.temperature)}</span>
-              <span className="units">°C</span>
-            </div>
-            <div className="col-md-6">
-              <img
-                src={weatherData.icon}
-                alt={weatherData.description}
-              />
-            </div>
-          </div>
-          <ul>
-            <li>
-              <span role="img" aria-label="emoji">
-                🌡
-              </span>{" "}
-              Feels like: <span>{Math.round(weatherData.feelsLike)}</span>°
-            </li>
-            <li>
-              <span role="img" aria-label="emoji">
-                🍃
-              </span>{" "}
-              Wind: <span>{Math.round(weatherData.wind)}</span>m/s
-            </li>
-            <li>
-              <span role="img" aria-label="emoji">
-                💧
-              </span>{" "}
-              Humidity: <span>{weatherData.humidity}</span>%
-            </li>
-          </ul>
+          <CurrentWeather data={weatherData} />
+          
         </div>
       </div>
     </div>
