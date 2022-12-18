@@ -41,7 +41,13 @@ export default function CurrentWeather(props) {
               </span>{" "}
               Humidity: <span>{props.data.humidity}</span>%
             </li>
-          </ul>   
+          </ul>
+          <div className="Tip">
+      Enjoy your day{" "}
+      <span role="img" aria-label="emoji">
+        🙂
+      </span>
+    </div>   
         </div>
     )
 }

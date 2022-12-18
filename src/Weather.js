@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import "./Weather.css";
+import Forecast from "./Forecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false})
@@ -84,9 +85,11 @@ if (weatherData.ready) {
       </div>
 
       <div className="row">
-        <div className="col">
+        <div className="col-5">
           <CurrentWeather data={weatherData} />
-          
+        </div>
+        <div className="col-7">
+          <Forecast />
         </div>
       </div>
     </div>
