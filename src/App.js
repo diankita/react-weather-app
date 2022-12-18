@@ -11,13 +11,13 @@ export default function App() {
     <div className="App">
       <div className="container shadow">
           <div className="row" id="main-section">
-            <div className="col" id="current-weather-section">
+            {/* <div className="col" id="current-weather-section"> */}
               <Weather defaultCity="Berlin" />
               <Tip />
-            </div>
-            <div className="col-md-7" id="weather-forecast-section">
+            {/* </div> */}
+            {/* <div className="col-md-7" id="weather-forecast-section"> */}
               <Forecast />
-            </div>
+            {/* </div> */}
           </div>
         </div>
         <Footer />

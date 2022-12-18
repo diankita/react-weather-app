@@ -20,22 +20,28 @@ export default function Weather(props) {
       icon:
         "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png",
     });
-  }  
+  }
+  
+  function search() {
+    const apiKey = "30o0bd4adtb5f5f52eb4075c39a0aa10";
+    let units = "metric"
+    let apiUrl =
+    `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(getWeatherData);
+  }
+
   function handleSubmit(event) {
   event.preventDefault();
-  alert(city);
+  search();
 }
 
   function handleCityInput(event) {
     setCity(event.target.value);
   }
 
-
-
 if (weatherData.ready) {
   return (
     <div className="Weather">
-      <div className="row">
       <form onSubmit={handleSubmit}>
         <div className="row">
         <div className="col-md-8 mb-2">
@@ -69,8 +75,6 @@ if (weatherData.ready) {
         </div>
       </div>
       </form>
-      </div>
-
       <div className="row city">
         <div className="col city">
           <h1>
@@ -88,12 +92,7 @@ if (weatherData.ready) {
     </div>
   );
 } else {
-  const apiKey = "30o0bd4adtb5f5f52eb4075c39a0aa10";
-  let units = "metric"
-  let apiUrl =
-    `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(getWeatherData);
-
+  search();
   return "Loading..."
 }
 
