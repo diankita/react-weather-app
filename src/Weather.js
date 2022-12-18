@@ -23,7 +23,7 @@ export default function Weather(props) {
     });
   }
   
-  function search() {
+  function searchCity() {
     const apiKey = "30o0bd4adtb5f5f52eb4075c39a0aa10";
     let units = "metric"
     let apiUrl =
@@ -33,11 +33,25 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
   event.preventDefault();
-  search();
+  searchCity();
 }
 
   function handleCityInput(event) {
     setCity(event.target.value);
+  }
+
+  function searchPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    const apiKey = "30o0bd4adtb5f5f52eb4075c39a0aa10";
+    let units = "metric";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(getWeatherData);
+  }
+
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchPosition);
   }
 
 if (weatherData.ready) {
@@ -68,6 +82,7 @@ if (weatherData.ready) {
           <button
             type="button"
             className="btn btn-outline-secondary w-100 shadow"
+            onClick={getCurrentPosition}
           >
             <span role="img" aria-label="emoji">
               📍
@@ -95,7 +110,7 @@ if (weatherData.ready) {
     </div>
   );
 } else {
-  search();
+  searchCity();
   return "Loading..."
 }
 
