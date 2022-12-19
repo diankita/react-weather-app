@@ -10,12 +10,12 @@ export default function CurrentWeather(props) {
             </li>
             <li>{props.data.description}</li>
           </ul>
-          <div className="row">
-            <div className="col">
+          <div className="d-flex flex-row">
+            <div className="p-3">
               <span className="degrees">{Math.round(props.data.temperature)}</span>
               <span className="units">°C</span>
             </div>
-            <div className="col-md-6">
+            <div className="p-1">
               <img
                 src={props.data.icon}
                 alt={props.data.description}

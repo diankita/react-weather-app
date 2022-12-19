@@ -28,3 +28,8 @@
 .forecast-description:first-letter {
   text-transform: capitalize;
 }
+
+.Forecast img {
+  height: 30px;
+  width: 30px;
+}
