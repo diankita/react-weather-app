@@ -23,12 +23,12 @@ export default function CurrentWeather(props) {
             </div>
           </div>
           <ul>
-            <li>
+            {/* <li>
               <span role="img" aria-label="emoji">
                 🌡
               </span>{" "}
               Feels like: <span>{Math.round(props.data.feelsLike)}</span>°
-            </li>
+            </li> */}
             <li>
               <span role="img" aria-label="emoji">
                 🍃
