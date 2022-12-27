@@ -6,17 +6,17 @@
   font-size: 14px;
   color: #6c6c6c;
   margin: 4px 0px;
-
 }
 
 .forecast-temp {
   font-size: 15px;
   font-weight: 600;
-  margin: 4px 0px;
+  padding: 4px 0px;
 }
 
 .forecast-temp-min {
   color: #6c6c6c;
+  margin-left: 4px;
 }
 
 .forecast-description {
