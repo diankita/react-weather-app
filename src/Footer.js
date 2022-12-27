@@ -12,7 +12,7 @@ export default function Footer() {
       >
         open sourced on Github
       </a>
-      <br />
+      {/* <br />
       Weather icons created by{" "}
       <a
         href="https://www.flaticon.com/free-icons/weather"
@@ -21,7 +21,7 @@ export default function Footer() {
         rel="noopener noreferrer"
       >
         iconixar - Flaticon
-      </a>
+      </a> */}
   </div>
   );
 }
