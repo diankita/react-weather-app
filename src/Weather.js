@@ -7,9 +7,16 @@ import Forecast from "./Forecast";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false})
   const [city, setCity] = useState(props.defaultCity);
+  // const [unit, setUnit] = useState(props.defaultMetric);
+
+  // function onUnitChange(newUnit) {
+  //   setUnit(newUnit);
+  //   const apiKey = "30o0bd4adtb5f5f52eb4075c39a0aa10";
+  //   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${newUnit}`;
+  //   axios.get(apiUrl).then(getWeatherData);
+  // }
   
   function getWeatherData(response) {
-    console.log(response.data)
     setWeatherData({
       ready: true,
       coordinates: response.data.coordinates,
@@ -60,49 +67,56 @@ if (weatherData.ready) {
     <div className="Weather">
       <form onSubmit={handleSubmit}>
         <div className="row">
-        <div className="col-md-8 mb-2">
-          <input
-            type="search"
-            placeholder="Enter a city"
-            className="form-control"
-            autoFocus
-            autoComplete="on"
-            onChange={handleCityInput}
-          />
+          <div className="col-md-8 mb-2">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              className="form-control"
+              autoFocus
+              autoComplete="on"
+              onChange={handleCityInput}
+            />
+          </div>
+          <div className="col mb-2">
+            <button
+              type="submit"
+              value="Search"
+              className="btn btn-secondary w-100 shadow"
+            >
+              Search
+            </button>
+          </div>
+          <div className="col mb-2">
+            <button
+              type="button"
+              className="btn btn-outline-secondary w-100 shadow"
+              onClick={getCurrentPosition}
+            >
+              <span role="img" aria-label="emoji">
+                📍
+              </span>
+            </button>
+          </div>
         </div>
-        <div className="col mb-2">
-          <button
-            type="submit"
-            value="Search"
-            className="btn btn-secondary w-100 shadow"
-          >
-            Search
-          </button>
-        </div>
-        <div className="col mb-2">
-          <button
-            type="button"
-            className="btn btn-outline-secondary w-100 shadow"
-            onClick={getCurrentPosition}
-          >
-            <span role="img" aria-label="emoji">
-              📍
-            </span>
-          </button>
-        </div>
-      </div>
       </form>
       <div className="row city">
         <div className="col city">
-          <h1>
-            {weatherData.city}
-          </h1>
+          <h1>{weatherData.city}</h1>
         </div>
       </div>
 
       <div className="row">
         <div className="col-5">
-          <CurrentWeather data={weatherData} />
+          <CurrentWeather
+            data={weatherData}
+            
+          />
+
+          {/* <CurrentWeather
+            data={weatherData}
+            configuredUnit={unit}
+            onUnitChange={setUnit}
+          /> */}
         </div>
         <div className="col-7">
           <Forecast coordinates={weatherData.coordinates} />
