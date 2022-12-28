@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import "./Weather.css";
@@ -61,6 +61,10 @@ export default function Weather(props) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchPosition);
   }
+
+  useEffect(() => {
+   searchCity(); 
+  }, [])
 
 if (weatherData.ready) {
   return (
@@ -125,7 +129,6 @@ if (weatherData.ready) {
     </div>
   );
 } else {
-  searchCity();
   return "Loading..."
 }
 
